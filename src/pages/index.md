@@ -1,6 +1,8 @@
 ---
 templateKey: index-page
-title: Great coffee with a conscience
-image: /img/yalla.png
+title: Yalla gatsby netlify-cms starter
 tags: yalla
+image:
+  image: /img/yalla.png
+  alt: yalla string
 ---
