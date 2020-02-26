@@ -14,6 +14,7 @@ module.exports = {
         name: "uploads"
       }
     },
+    `gatsby-plugin-material-ui`,
     {
       resolve: "gatsby-source-filesystem",
       options: {
