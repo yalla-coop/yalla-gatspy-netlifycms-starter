@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { Container } from '@material-ui/core';
 import Navbar from './Navbar';
@@ -19,6 +20,10 @@ const TemplateWrapper = ({ children }) => {
       <Container>{children}</Container>
     </>
   );
+};
+
+TemplateWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default TemplateWrapper;
