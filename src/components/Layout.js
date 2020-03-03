@@ -1,14 +1,14 @@
-import React, { Fragment } from "react";
-import { Helmet } from "react-helmet";
-import Navbar from "./Navbar";
-import useSiteMetadata from "./SiteMetadata";
-
-import { Container } from "@material-ui/core";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
+import { Container } from '@material-ui/core';
+import Navbar from './Navbar';
+import useSiteMetadata from './SiteMetadata';
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
-    <Fragment>
+    <>
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -18,8 +18,12 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <Navbar />
       <Container>{children}</Container>
-    </Fragment>
+    </>
   );
+};
+
+TemplateWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default TemplateWrapper;
