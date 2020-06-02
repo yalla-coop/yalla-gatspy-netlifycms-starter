@@ -1,45 +1,38 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { graphql } from "gatsby";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 
-import { Container, Box, Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import Img from "../components/PreviewCompatibleImage";
-import Layout from "../components/Layout";
+import Img from '../components/PreviewCompatibleImage';
+import Layout from '../components/Layout';
 
-const styles = makeStyles({
-  container: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center"
+const styles = {
+  div: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   image: {
-    width: "300px",
-    height: "500px"
-  }
-});
+    width: '300px',
+    height: '500px',
+  },
+};
 export const IndexPageTemplate = ({ image, title }) => {
-  const classes = styles();
   return (
     <>
-      <Container className={classes.container}>
-        <Typography variant="h2" color="secondary" align="center">
-          {title || "Yalla"}
-        </Typography>
-        <Typography variant="h3" color="primary" align="center">
-          Gatsby and netlify-CMS
-        </Typography>
-        <div className={classes.image}>
+      <div style={styles.div}>
+        <h2>{title || 'Yalla'}</h2>
+        <h3>Gatsby and netlify-CMS</h3>
+        <div style={styles.image}>
           <Img imageInfo={image} />
         </div>
-      </Container>
+      </div>
     </>
   );
 };
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string
+  title: PropTypes.string,
 };
 
 const IndexPage = ({ data }) => {
@@ -55,9 +48,9 @@ const IndexPage = ({ data }) => {
 IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object
-    })
-  })
+      frontmatter: PropTypes.object,
+    }),
+  }),
 };
 
 export default IndexPage;
