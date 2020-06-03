@@ -61,7 +61,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         templateKey
-        tags
         image {
           alt
           image {
