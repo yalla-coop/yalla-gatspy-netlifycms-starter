@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import { Container } from '@material-ui/core';
 import Navbar from './Navbar';
 import useSiteMetadata from './SiteMetadata';
 
@@ -17,7 +16,7 @@ const TemplateWrapper = ({ children }) => {
         <meta property="og:url" content="/" />
       </Helmet>
       <Navbar />
-      <Container>{children}</Container>
+      <div>{children}</div>
     </>
   );
 };
